@@ -142,6 +142,6 @@ Material:
     - __dirty: 1
     m_Colors:
     - _Color: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
-    - _CoverageColor: {r: 1, g: 0, b: 0.6421051, a: 0}
-    - _EmissionColor: {r: 0.110268846, g: 0.070487715, b: 0.1509434, a: 1}
+    - _CoverageColor: {r: 0.39248845, g: 0.5660378, b: 0.4660237, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

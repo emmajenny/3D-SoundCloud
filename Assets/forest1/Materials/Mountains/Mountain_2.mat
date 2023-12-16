@@ -98,9 +98,9 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 0.77582246, g: 0.12743773, b: 0.57112503, a: 1}
+    - _Color: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
     - _Color0: {r: 0, g: 0.43319556, b: 0.7176471, a: 1}
     - _Color1: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FogColor: {r: 0.5235849, g: 1, b: 0.55100507, a: 0}
+    - _FogColor: {r: 0.36845854, g: 0.63547266, b: 0.6792453, a: 0}
   m_BuildTextureStacks: []
