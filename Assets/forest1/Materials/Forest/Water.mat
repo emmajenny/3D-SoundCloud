@@ -143,5 +143,5 @@ Material:
     - _Color2: {r: 1, g: 0.2880787, b: 0.2216981, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
-    - _WaterColor: {r: 0.50980395, g: 0.78039217, b: 0.6509804, a: 0}
+    - _WaterColor: {r: 0.34091312, g: 0.3784798, b: 0.4433962, a: 0}
   m_BuildTextureStacks: []
