@@ -251,8 +251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 032afca5781ebbf4297689acad0dc1d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openSound: {fileID: 0}
-  closeSound: {fileID: 0}
+  openSound: {fileID: 8300000, guid: 11f391c26ac20c8489f97057b8569dfb, type: 3}
+  closeSound: {fileID: 8300000, guid: 549fcaa30ad2a134ca1a763703b411b0, type: 3}
   openAnimationName: Clicked
   closeAnimationName: Sit
   interactiveObjectDelayTime: 0
