@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5625512282174676482}
   - component: {fileID: -4797533560938650681}
   - component: {fileID: 8970970554591456894}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: mic 1
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.5489e-10, y: -0.033322, z: -0.0000000019098}
-  m_LocalScale: {x: 1.6560546, y: 1.6560546, z: 1.6560546}
+  m_LocalScale: {x: 2.3610551, y: 2.3610551, z: 2.3610551}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
