@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*Script to disable lighting and shadows 
 when moving away at a set distance*/
@@ -23,6 +24,12 @@ namespace Highlands
 
         private void Update()
         {
+            if(Input.GetKey(KeyCode.Escape))
+            {
+                SceneManager.LoadScene("Christmas");
+            }
+            //Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
             //Calculate the distance between a given object and the light source
             float cameraDistance = Vector3.Distance(playerCamera.transform.position, gameObject.transform.position);
 
