@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class RaycastManager : MonoBehaviour
 {
-<<<<<<< Updated upstream
     public string targetTag = "Interactive";
     public Transform thirdObject;
 
     // Start is called before the first frame update
-=======
-    
->>>>>>> Stashed changes
     void Start()
     {
 
@@ -22,7 +18,6 @@ public class RaycastManager : MonoBehaviour
     {
         RaycastHit hit;
 
-<<<<<<< Updated upstream
         // here we actually shoot the ray, starting from our current position, going forward unto infinity
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 1))
         {
@@ -38,12 +33,5 @@ public class RaycastManager : MonoBehaviour
                 thirdObject.position = new Vector3(48, 14, 21);
             }
         }
-=======
-        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
-        {
-            Debug.Log("object hit!");
-        }
-       
->>>>>>> Stashed changes
     }
 }
