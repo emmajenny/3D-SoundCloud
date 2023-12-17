@@ -16,6 +16,8 @@ namespace Highlands
         [Tooltip("Tag for pickable object")]
         [SerializeField] private string itemTag = "Item";
         [Tooltip("The player's main camera")]
+        [SerializeField] private string Return = "ReturnUI";
+        [Tooltip("The player's main camera")]
         [SerializeField] private Camera mainCamera;
         [Tooltip("Parent object where the object to be lifted becomes")]
         [SerializeField] private Transform pickupParent;
@@ -23,6 +25,8 @@ namespace Highlands
         [Header("Keybinds")]
         [Tooltip("Interaction key")]
         [SerializeField] private KeyCode interactionKey = KeyCode.E;
+        [Tooltip("UI key")]
+        [SerializeField] private KeyCode UIKey = KeyCode.F;
 
         [Header("Object Following")]
         [Tooltip("Minimum speed of the lifted object")]
@@ -55,6 +59,7 @@ namespace Highlands
         private float _currentSpeed = 0f;
         private float _currentDistance = 0f;
         private CharacterController _characterController;
+        [HideInInspector] bool _isMain = false;
 
 
         private void Start()
@@ -89,6 +94,17 @@ namespace Highlands
                     if (Input.GetKeyDown(interactionKey))
                     {
                         _lookInteractive.PlayInteractiveAnimation();
+                    }
+                }
+                else if (interactionHit.collider.CompareTag(Return))
+                {
+                    //ShowInteractiveUI();
+                    //Debug.Log("UI");
+                    uiPanel.gameObject.SetActive(true);
+                    panelText.text = interactiveOpenText;
+                    if (Input.GetKeyDown(UIKey))
+                    {
+                        GameObject.Find("ReturnToMainUI").GetComponent<ReturnToMain>().ChangeScene();
                     }
                 }
             }
