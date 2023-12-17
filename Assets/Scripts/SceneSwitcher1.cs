@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitcher1 : MonoBehaviour
 {
+<<<<<<< Updated upstream
     // 전환할 씬의 이름을 여기에 입력하세요.
     public string targetSceneName = "Hiphop";
 
@@ -23,4 +24,11 @@ public class SceneSwitcher1 : MonoBehaviour
         Debug.Log("Button Clicked"); // 디버그 로그 추가
         SceneManager.LoadScene(targetSceneName);
     }
+=======
+    public void SceneChange()
+    {
+        SceneManager.LoadScene("forest1/Demo/Main Scene/Hiphop");
+    }
+   
+>>>>>>> Stashed changes
 }

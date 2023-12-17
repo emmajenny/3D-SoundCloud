@@ -1,5 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:Assets/Audio.meta
 guid: 0b483df560f8f45dcb440a7d9e67a7bf
+========
+guid: faff8b7354249402da8a2d54efd636e3
+>>>>>>>> Stashed changes:Assets/Songs.meta
+=======
+<<<<<<<< Updated upstream:Assets/Canvas 1.meta
+guid: b2027c77035164b31a10aefbf225b441
+========
+guid: 1f739ee267723475c80ec0f74484e18c
+>>>>>>>> Stashed changes:Assets/Audio.meta
+>>>>>>> Stashed changes
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Scripts.meta
 guid: 3f8e31e6e387140c080ce933afb8bfcf
+========
+guid: b2027c77035164b31a10aefbf225b441
+>>>>>>>> Stashed changes:Assets/Canvas 1.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

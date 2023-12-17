@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 using UnityEngine;
 
 public class ObjectClick : MonoBehaviour
@@ -35,6 +36,44 @@ public class ObjectClick : MonoBehaviour
                     }
                 }
             }
+=======
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ObjectClickWithTrigger : MonoBehaviour
+{
+    public Canvas musicCanvas;
+
+    private void OnMouseDown()
+    {
+        // 클릭되었을 때 실행되는 코드
+        if (musicCanvas != null)
+        {
+            AudioSource audioSource = musicCanvas.GetComponent<AudioSource>();
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
+            else
+            {
+                Debug.LogError("Audio Source not found on the music Canvas.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Music Canvas not assigned.");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // 트리거에 다른 Collider가 들어왔을 때 실행되는 코드
+        if (other.CompareTag("Player"))  // 다른 Collider의 태그를 확인하여 원하는 동작을 수행합니다.
+        {
+            Debug.Log("Player entered the trigger!");
+            // 여기에 원하는 동작을 추가합니다.
+>>>>>>> Stashed changes
         }
     }
 }

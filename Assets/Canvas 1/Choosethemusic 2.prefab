@@ -181,6 +181,7 @@ RectTransform:
   m_GameObject: {fileID: 1018749631396773147}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
   m_LocalScale: {x: 1.308262, y: 1.358349, z: 1.358349}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -189,6 +190,16 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -85.603836}
+=======
+  m_LocalScale: {x: 6.2200766, y: 6.4582133, z: 6.4582133}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6362862391462326368}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 270, y: -290.99988}
+>>>>>>> Stashed changes
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2478942517583234663
@@ -414,8 +425,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4.7544584, y: 4.7544584, z: 4.7544584}
   m_ConstrainProportionsScale: 0
+<<<<<<< Updated upstream
   m_Children:
   - {fileID: 1037947181269018676}
+=======
+  m_Children: []
+>>>>>>> Stashed changes
   m_Father: {fileID: 6362862391462326368}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -529,7 +544,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81687f90c3f544df49ad35aa2a54a4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   targetSceneName: Hiphop
+=======
+>>>>>>> Stashed changes
 --- !u!1 &5423483847765407430
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +581,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1259561814265652836}
+<<<<<<< Updated upstream
   - {fileID: 1228326431709865163}
+=======
+>>>>>>> Stashed changes
   m_Father: {fileID: 6362862391462326368}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -913,7 +934,11 @@ GameObject:
   - component: {fileID: 6115379246642398477}
   - component: {fileID: 9029312170639142141}
   m_Layer: 5
+<<<<<<< Updated upstream
   m_Name: Choosethemusic 1
+=======
+  m_Name: Choosethemusic 2
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -933,10 +958,18 @@ RectTransform:
   m_Children:
   - {fileID: 2881961637904114065}
   - {fileID: 3367977807900577007}
+<<<<<<< Updated upstream
+=======
+  - {fileID: 1037947181269018676}
+>>>>>>> Stashed changes
   - {fileID: 1777815511880275846}
   - {fileID: 6370533031289011813}
   - {fileID: 6779888992768696314}
   - {fileID: 7110871187465940835}
+<<<<<<< Updated upstream
+=======
+  - {fileID: 1228326431709865163}
+>>>>>>> Stashed changes
   - {fileID: 3978600193046105647}
   - {fileID: 8692235916791648775}
   - {fileID: 2975137406462076929}
@@ -1114,6 +1147,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8313989334613496028}
+<<<<<<< Updated upstream
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1124,6 +1158,18 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
+=======
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4.7544584, y: 4.7544584, z: 4.7544584}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6362862391462326368}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -809.9999, y: 115.99981}
+>>>>>>> Stashed changes
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3565147935812719915
