@@ -1,5 +1,6 @@
 fileFormatVersion: 2
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<<< Updated upstream:Assets/Audio.meta
 guid: 0b483df560f8f45dcb440a7d9e67a7bf
 ========
@@ -11,6 +12,9 @@ guid: b2027c77035164b31a10aefbf225b441
 ========
 guid: 1f739ee267723475c80ec0f74484e18c
 >>>>>>>> Stashed changes:Assets/Audio.meta
+>>>>>>> Stashed changes
+=======
+guid: 0b483df560f8f45dcb440a7d9e67a7bf
 >>>>>>> Stashed changes
 folderAsset: yes
 DefaultImporter:

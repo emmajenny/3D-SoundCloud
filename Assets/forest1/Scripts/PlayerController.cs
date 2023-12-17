@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*Simple player movement controller, based on character controller component, 
 with footstep system based on check the current texture of the component*/
@@ -58,6 +59,10 @@ namespace Highlands
         [Tooltip("Add textures for this layer and add sounds to be played for this texture")]
         public List<GroundLayer> groundLayers = new List<GroundLayer>();
 
+        [Header("Interaction")]
+        [Tooltip("Tag for clickable objects")]
+        [SerializeField] private string clickableTag = "Click";
+
         //Private movement variables
         private float _horizontalMovement;
         private float _verticalMovement;
@@ -107,8 +112,30 @@ namespace Highlands
             Movement();
             MouseLook();
             GroundChecker();
+
+            // check for interaction input (E key)
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                CheckForClickableObjects();
+            }
         }
 
+        private void CheckForClickableObjects()
+        {
+            // Perform raycast to check for clickable objects
+            Ray interactRay = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
+            RaycastHit hit;
+
+            if (Physics.Raycast(interactRay, out hit))
+            {
+                // Check if the clicked object has the specified tag
+                if (hit.collider.CompareTag(clickableTag))
+                {
+                    Debug.Log("Clicked on object with tag: " + clickableTag);
+                    SceneManager.LoadScene("Pop");
+                }
+            }
+        }
         //Character controller movement
         private void Movement()
         {

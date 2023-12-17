@@ -15,6 +15,14 @@ namespace Highlands
         [SerializeField] private string interactiveTag = "Interactive";
         [Tooltip("Tag for pickable object")]
         [SerializeField] private string itemTag = "Item";
+        [Tooltip("Tag for UI object")]
+        [SerializeField] private string UITag1 = "UI1";
+        [Tooltip("Tag for UI object")]
+        [SerializeField] private string UITag2 = "UI2";
+        [Tooltip("Tag for UI object")]
+        [SerializeField] private string UITag3 = "UI3";
+        [Tooltip("Tag for UI object")]
+        [SerializeField] private string UITag4 = "UI4";
         [Tooltip("The player's main camera")]
         [SerializeField] private Camera mainCamera;
         [Tooltip("Parent object where the object to be lifted becomes")]
@@ -23,6 +31,8 @@ namespace Highlands
         [Header("Keybinds")]
         [Tooltip("Interaction key")]
         [SerializeField] private KeyCode interactionKey = KeyCode.E;
+        [Tooltip("UI key")]
+        [SerializeField] private KeyCode UIKey = KeyCode.F;
 
         [Header("Object Following")]
         [Tooltip("Minimum speed of the lifted object")]
@@ -44,6 +54,7 @@ namespace Highlands
         [Tooltip("Text when an interactive object can be closed")]
         [SerializeField] private string interactiveCloseText;
 
+
         //Private variables.
         private PhysicsObject _physicsObject;
         private PhysicsObject _currentlyPickedUpObject;
@@ -55,6 +66,11 @@ namespace Highlands
         private float _currentSpeed = 0f;
         private float _currentDistance = 0f;
         private CharacterController _characterController;
+        [HideInInspector] public bool UIContacted1 = false;
+        [HideInInspector] public bool UIContacted2 = false;
+        [HideInInspector] public bool UIContacted3 = false;
+        [HideInInspector] public bool UIContacted4 = false;
+        [HideInInspector] public string SceneName;
 
 
         private void Start()
@@ -67,6 +83,15 @@ namespace Highlands
         {
             Interactions();
             LegCheck();
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                SceneName = "Hiphop1";
+                GameObject.Find("HiphopAlbum1").GetComponent<UiManager>().ChangeScene(SceneName);
+            }
+
+
+
         }
 
         //Determine which object we are now looking at, depending on the tag and component
@@ -74,7 +99,7 @@ namespace Highlands
         {
             _raycastPosition = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, 0));
             RaycastHit interactionHit;
-            if (Physics.Raycast(_raycastPosition, mainCamera.transform.forward, 
+            if (Physics.Raycast(_raycastPosition, mainCamera.transform.forward,
                 out interactionHit, interactionDistance, interactionLayer))
             {
                 if (interactionHit.collider.CompareTag(itemTag))
@@ -91,11 +116,48 @@ namespace Highlands
                         _lookInteractive.PlayInteractiveAnimation();
                     }
                 }
+                else if (interactionHit.collider.CompareTag(UITag1))
+                {
+                    uiPanel.gameObject.SetActive(true);
+                    panelText.text = interactiveCloseText;
+                    UIContacted1 = true;
+                    UIContacted2 = false;
+                    UIContacted3 = false;
+                    UIContacted4 = false;
+                }
+                else if (interactionHit.collider.CompareTag(UITag2))
+                {
+                    ShowInteractiveUI();
+                    UIContacted2 = true;
+                    UIContacted1 = false;
+                    UIContacted3 = false;
+                    UIContacted4 = false;
+                }
+                else if (interactionHit.collider.CompareTag(UITag3))
+                {
+                    ShowInteractiveUI();
+                    UIContacted3 = true;
+                    UIContacted1 = false;
+                    UIContacted2 = false;
+                    UIContacted4 = false;
+                }
+                else if (interactionHit.collider.CompareTag(UITag4))
+                {
+                    ShowInteractiveUI();
+                    UIContacted4 = true;
+                    UIContacted1 = false;
+                    UIContacted2 = false;
+                    UIContacted3 = false;
+                }
             }
             else
             {
                 _lookInteractive = null;
                 _lookObject = null;
+                UIContacted1 = false;
+                UIContacted2 = false;
+                UIContacted3 = false;
+                UIContacted4 = false;
                 uiPanel.gameObject.SetActive(false);
             }
 
@@ -112,6 +174,26 @@ namespace Highlands
                 {
                     BreakConnection();
                 }
+            }
+
+            if (Input.GetKeyDown(UIKey))
+            {
+                if (UIContacted1)
+                {
+                    SceneName = "Hiphop1";
+                    GameObject.Find("HiphopAlbum1").GetComponent<UiManager>().ChangeScene(SceneName);
+                }
+                else if (UIContacted2)
+                {
+                    SceneName = "Hiphop2";
+                    GameObject.Find("HiphopAlbum2").GetComponent<UiManager>().ChangeScene(SceneName);
+                }
+                else if (UIContacted3)
+                {
+                    SceneName = "Hiphop3";
+                    GameObject.Find("HiphopAlbum3").GetComponent<UiManager>().ChangeScene(SceneName);
+                }
+                
             }
         }
 
@@ -196,6 +278,5 @@ namespace Highlands
             }
 
         }
-
     }
 }

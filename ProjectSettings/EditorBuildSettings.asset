@@ -4,5 +4,29 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/forest1/Demo/Main Scene/Main.unity
+    guid: 6969996fa35766a498201cac3ecf92e9
+  - enabled: 1
+    path: Assets/forest1/Demo/Main Scene/Hiphop.unity
+    guid: b5dba16be0c6fe0489adbe396776242d
+  - enabled: 1
+    path: Assets/forest1/Demo/Main Scene/Pop.unity
+    guid: 9992f003c4743444ebf81e2d9b052ff5
+  - enabled: 1
+    path: Assets/forest1/Demo/Main Scene/Acoustic.unity
+    guid: 533efa6735f445b4889093e6adaa3016
+  - enabled: 1
+    path: Assets/forest1/Demo/Main Scene/Christmas.unity
+    guid: 02d054f0bd65cbc40ac70289563085f1
+  - enabled: 1
+    path: Assets/Scene2/Hiphop1.unity
+    guid: 24e57447253234464a64f2eff630cfee
+  - enabled: 1
+    path: Assets/Scene2/Hiphop2.unity
+    guid: da2a10757c1b44802a845a7e9da0dc8c
+  - enabled: 1
+    path: Assets/Scene2/Hiphop3.unity
+    guid: 3a7fe946ec2b3492087dd39b2904c8a2
   m_configObjects: {}

@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Item
   - Interactive
+  - Click
+  - UI
+  - UI1
+  - UI2
+  - UI3
+  - UI4
   layers:
   - Default
   - TransparentFX
