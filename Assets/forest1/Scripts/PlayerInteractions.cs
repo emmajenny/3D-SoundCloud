@@ -22,6 +22,8 @@ namespace Highlands
         [Tooltip("Tag for UI object")]
         [SerializeField] private string UITag3 = "UI3";
         [Tooltip("The player's main camera")]
+        [SerializeField] private string Return = "ReturnUI";
+        [Tooltip("The player's main camera")]
         [SerializeField] private Camera mainCamera;
         [Tooltip("Parent object where the object to be lifted becomes")]
         [SerializeField] private Transform pickupParent;
@@ -121,7 +123,7 @@ namespace Highlands
             if (Input.GetKeyDown(KeyCode.Alpha7))
             {
                 SceneName = "Christmas1";
-                GameObject.Find("Christmas1").GetComponent<UiManager>().ChangeScene(SceneName);
+                GameObject.Find("ChristmasAlbum1").GetComponent<UiManager>().ChangeScene(SceneName);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha8))
@@ -154,6 +156,16 @@ namespace Highlands
                         _lookInteractive.PlayInteractiveAnimation();
                     }
                 }
+                else if (interactionHit.collider.CompareTag(Return))
+                {
+                    uiPanel.gameObject.SetActive(true);
+                    panelText.text = interactiveOpenText;
+                    if (Input.GetKeyDown(UIKey))
+                    {
+                        GameObject.Find("ReturnToMainUI").GetComponent<ReturnToMain>().ChangeScene();
+                    }
+                }
+
                 else if (interactionHit.collider.CompareTag(UITag1))
                 {
                     uiPanel.gameObject.SetActive(true);
@@ -179,6 +191,7 @@ namespace Highlands
                     UIContacted2 = false;
                     UIContacted4 = false;
                 }
+
             }
             else
             {
