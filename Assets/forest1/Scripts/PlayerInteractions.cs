@@ -15,8 +15,12 @@ namespace Highlands
         [SerializeField] private string interactiveTag = "Interactive";
         [Tooltip("Tag for pickable object")]
         [SerializeField] private string itemTag = "Item";
-        [Tooltip("The player's main camera")]
-        [SerializeField] private string Return = "ReturnUI";
+        [Tooltip("Tag for UI object")]
+        [SerializeField] private string UITag1 = "UI1";
+        [Tooltip("Tag for UI object")]
+        [SerializeField] private string UITag2 = "UI2";
+        [Tooltip("Tag for UI object")]
+        [SerializeField] private string UITag3 = "UI3";
         [Tooltip("The player's main camera")]
         [SerializeField] private Camera mainCamera;
         [Tooltip("Parent object where the object to be lifted becomes")]
@@ -48,6 +52,7 @@ namespace Highlands
         [Tooltip("Text when an interactive object can be closed")]
         [SerializeField] private string interactiveCloseText;
 
+
         //Private variables.
         private PhysicsObject _physicsObject;
         private PhysicsObject _currentlyPickedUpObject;
@@ -59,7 +64,11 @@ namespace Highlands
         private float _currentSpeed = 0f;
         private float _currentDistance = 0f;
         private CharacterController _characterController;
-        [HideInInspector] bool _isMain = false;
+        [HideInInspector] public bool UIContacted1 = false;
+        [HideInInspector] public bool UIContacted2 = false;
+        [HideInInspector] public bool UIContacted3 = false;
+        [HideInInspector] public bool UIContacted4 = false;
+        [HideInInspector] public string SceneName;
 
 
         private void Start()
@@ -72,6 +81,55 @@ namespace Highlands
         {
             Interactions();
             LegCheck();
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                SceneName = "Hiphop1";
+                GameObject.Find("HiphopAlbum1").GetComponent<UiManager>().ChangeScene(SceneName);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                SceneName = "Hiphop2";
+                GameObject.Find("HiphopAlbum2").GetComponent<UiManager>().ChangeScene(SceneName);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                SceneName = "Pop1";
+                GameObject.Find("PopAlbum1").GetComponent<UiManager>().ChangeScene(SceneName);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                SceneName = "Pop2";
+                GameObject.Find("PopAlbum2").GetComponent<UiManager>().ChangeScene(SceneName);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                SceneName = "Acoustic1";
+                GameObject.Find("AcousticAlbum1").GetComponent<UiManager>().ChangeScene(SceneName);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                SceneName = "Acoustic2";
+                GameObject.Find("AcousticAlbum2").GetComponent<UiManager>().ChangeScene(SceneName);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha7))
+            {
+                SceneName = "Christmas1";
+                GameObject.Find("Christmas1").GetComponent<UiManager>().ChangeScene(SceneName);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha8))
+            {
+                SceneName = "Christmas2";
+                GameObject.Find("ChristmasAlbum2").GetComponent<UiManager>().ChangeScene(SceneName);
+            }
+
         }
 
         //Determine which object we are now looking at, depending on the tag and component
@@ -79,7 +137,7 @@ namespace Highlands
         {
             _raycastPosition = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, 0));
             RaycastHit interactionHit;
-            if (Physics.Raycast(_raycastPosition, mainCamera.transform.forward, 
+            if (Physics.Raycast(_raycastPosition, mainCamera.transform.forward,
                 out interactionHit, interactionDistance, interactionLayer))
             {
                 if (interactionHit.collider.CompareTag(itemTag))
@@ -96,22 +154,40 @@ namespace Highlands
                         _lookInteractive.PlayInteractiveAnimation();
                     }
                 }
-                else if (interactionHit.collider.CompareTag(Return))
+                else if (interactionHit.collider.CompareTag(UITag1))
                 {
-                    //ShowInteractiveUI();
-                    //Debug.Log("UI");
                     uiPanel.gameObject.SetActive(true);
-                    panelText.text = interactiveOpenText;
-                    if (Input.GetKeyDown(UIKey))
-                    {
-                        GameObject.Find("ReturnToMainUI").GetComponent<ReturnToMain>().ChangeScene();
-                    }
+                    panelText.text = interactiveCloseText;
+                    UIContacted1 = true;
+                    UIContacted2 = false;
+                    UIContacted3 = false;
+                    UIContacted4 = false;
+                }
+                else if (interactionHit.collider.CompareTag(UITag2))
+                {
+                    ShowInteractiveUI();
+                    UIContacted2 = true;
+                    UIContacted1 = false;
+                    UIContacted3 = false;
+                    UIContacted4 = false;
+                }
+                else if (interactionHit.collider.CompareTag(UITag3))
+                {
+                    ShowInteractiveUI();
+                    UIContacted3 = true;
+                    UIContacted1 = false;
+                    UIContacted2 = false;
+                    UIContacted4 = false;
                 }
             }
             else
             {
                 _lookInteractive = null;
                 _lookObject = null;
+                UIContacted1 = false;
+                UIContacted2 = false;
+                UIContacted3 = false;
+                UIContacted4 = false;
                 uiPanel.gameObject.SetActive(false);
             }
 
@@ -212,6 +288,5 @@ namespace Highlands
             }
 
         }
-
     }
 }

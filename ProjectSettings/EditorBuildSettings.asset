@@ -23,4 +23,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/forest1/Demo/Main Scene/Christmas.unity
     guid: 02d054f0bd65cbc40ac70289563085f1
+  - enabled: 1
+    path: Assets/Karaoke/Scenes/Hiphop1.unity
+    guid: 1ad5e4e89c3514cd592a0f216e8a3a0f
+  - enabled: 1
+    path: Assets/Karaoke/Scenes/Hiphop2.unity
+    guid: 90794c764d08e4a6faa4b064be21575e
+  - enabled: 1
+    path: Assets/Karaoke/Scenes/Pop1.unity
+    guid: b3a4caf798e99426c9e2878dcbc380ca
+  - enabled: 1
+    path: Assets/Karaoke/Scenes/Pop2.unity
+    guid: b16f69b3cf082438d9d00e178e35b52e
+  - enabled: 1
+    path: Assets/Karaoke/Scenes/Acoustic1.unity
+    guid: 806548f75e15c4459a916dfcae0d96d5
+  - enabled: 1
+    path: Assets/Karaoke/Scenes/Acoustic2.unity
+    guid: c62439d2baf574b21a4c8f3732d51389
+  - enabled: 1
+    path: Assets/Karaoke/Scenes/Christmas1.unity
+    guid: 4c7937ef0d6b4425884b787cd409707a
   m_configObjects: {}

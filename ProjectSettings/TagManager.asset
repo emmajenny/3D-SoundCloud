@@ -7,6 +7,9 @@ TagManager:
   - Item
   - Interactive
   - ReturnUI
+  - UI1
+  - UI2
+  - UI3
   layers:
   - Default
   - TransparentFX
